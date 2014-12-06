@@ -1,0 +1,9 @@
+E:\JaguarManual\JaguarManual\bin\Debug\JaguarManual.exe.config
+E:\JaguarManual\JaguarManual\bin\Debug\JaguarManual.exe
+E:\JaguarManual\JaguarManual\bin\Debug\JaguarManual.pdb
+E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.csprojResolveAssemblyReference.cache
+E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.Form1.resources
+E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.Properties.Resources.resources
+E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.csproj.GenerateResource.Cache
+E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.exe
+E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.pdb
