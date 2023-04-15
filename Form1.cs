@@ -8,9 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
-using System.Data.SqlClient;
-using System.Data.SQLite;
 
 
 namespace JaguarManual
@@ -20,7 +17,7 @@ namespace JaguarManual
 
         public Form1()
         {
-            InitializeComponent();   
+            InitializeComponent();
             AppDomain.CurrentDomain.SetData("DataDirectory", Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData), "Lolliesoft"));
         }
 
@@ -60,7 +57,7 @@ namespace JaguarManual
             //treeView1.Nodes.Add(treeNode);
         }
 
- 
+
 
         private void treeView1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -74,118 +71,119 @@ namespace JaguarManual
             //String sqlquery "Select name from Data where name = node";
             //MessageBox.Show(string.Format("You selected: {0}", node.Text));
 
-            using (SQLiteConnection conn = new SQLiteConnection("Data Source = |DataDirectory|\\JTIS.db"))
-            {
-                conn.Open();
+            //using (SQLiteConnection conn = new SQLiteConnection("Data Source = |DataDirectory|\\JTIS.db"))
+            //{
+            //    conn.Open();
 
 
-                TreeNode node = treeView1.SelectedNode;
-                string nodename = node.ToString();
-                ////SQLiteCommand cmd = new SQLiteCommand("SELECT Information FROM DATA WHERE name='" + (nodename.Trim().Replace("'", "''")) + "'", conn);
-                SQLiteCommand cmd = new SQLiteCommand("SELECT article FROM DATA WHERE name ='" + (nodename.Trim().Remove(0, 10)) + "'", conn);
-                //var substring = ("SELECT image_id FROM DATA WHERE name ='" + (nodename.Trim().Remove(0, 10)) + "'");
+            //    TreeNode node = treeView1.SelectedNode;
+            //    string nodename = node.ToString();
+            //    ////SQLiteCommand cmd = new SQLiteCommand("SELECT Information FROM DATA WHERE name='" + (nodename.Trim().Replace("'", "''")) + "'", conn);
+            //    SQLiteCommand cmd = new SQLiteCommand("SELECT article FROM DATA WHERE name ='" + (nodename.Trim().Remove(0, 10)) + "'", conn);
+            //var substring = ("SELECT image_id FROM DATA WHERE name ='" + (nodename.Trim().Remove(0, 10)) + "'");
 
 
-                //SQLiteCommand cmd2 = new SQLiteCommand("SELECT IMAGE FROM IMAGES INNER JOIN DATA ON IMAGES.image_id=DATA.image_id WHERE DATA.name ='" + (nodename.Trim().Remove(0, 10)) + "'", conn);
+            //SQLiteCommand cmd2 = new SQLiteCommand("SELECT IMAGE FROM IMAGES INNER JOIN DATA ON IMAGES.image_id=DATA.image_id WHERE DATA.name ='" + (nodename.Trim().Remove(0, 10)) + "'", conn);
 
 
-                SQLiteDataReader reader = cmd.ExecuteReader();
-                //SQLiteDataReader reader2 = cmd2.ExecuteReader();
+            //SQLiteDataReader reader = cmd.ExecuteReader();
+            //SQLiteDataReader reader2 = cmd2.ExecuteReader();
 
 
-                while (reader.Read())
-                {
-                    webBrowser1.DocumentText = (reader["article"].ToString());
+            //while (reader.Read())
+            //{
+            //    webBrowser1.DocumentText = (reader["article"].ToString());
 
 
-                    //For Text inside a BLOB
-                    //byte[] imageBytes = (Byte[])reader["image"];
-                    //MemoryStream ms = new MemoryStream(imageBytes);
-                    //pictureBox1.Image = Image.FromStream(ms, true);
-                    //webBrowser1.DocumentText = Convert.ToBase64String(data); //For text inside a Blob
+            //For Text inside a BLOB
+            //byte[] imageBytes = (Byte[])reader["image"];
+            //MemoryStream ms = new MemoryStream(imageBytes);
+            //pictureBox1.Image = Image.FromStream(ms, true);
+            //webBrowser1.DocumentText = Convert.ToBase64String(data); //For text inside a Blob
 
-                    //For Image inside a BLOB
-
-
-                    //byte[] imagepic = (byte[])reader["article"];
-
-                    //Clipboard.SetImage(Image.FromStream(ms, true));
-                    //richTextBox1.Paste();
+            //For Image inside a BLOB
 
 
+            //byte[] imagepic = (byte[])reader["article"];
 
-                    //richTextBox1.Text = UTF8Encoding.ASCII.GetString(imagepic); //For text inside a Blob
+            //Clipboard.SetImage(Image.FromStream(ms, true));
+            //richTextBox1.Paste();
 
 
 
-
-                }
-
-            }
-
-            using (SQLiteConnection conn2 = new SQLiteConnection("Data Source = |DataDirectory|\\JTIS.db"))
-            {
-                conn2.Open();
-
-
-                TreeNode node = treeView1.SelectedNode;
-                string nodename = node.ToString();
-                SQLiteCommand cmd2 = new SQLiteCommand("SELECT IMAGE FROM IMAGES INNER JOIN DATA ON IMAGES.image_id=DATA.image_id WHERE DATA.name ='" + (nodename.Trim().Remove(0, 10)) + "'", conn2);
-
-                SQLiteDataReader reader2 = cmd2.ExecuteReader();
-
-                while (reader2.Read())
-                {
-                    byte[] imageBytes = (Byte[])reader2["image"];
-                    MemoryStream ms = new MemoryStream(imageBytes);
-                    //pictureBox1.Image = Image.FromStream(ms, true);
-                    Clipboard.SetImage(Image.FromStream(ms, true));
-                    richTextBox1.Paste();
-                }
-            }
-        }
-
-       
-                    
-
-               
-
-                ////MessageBox.Show(reader["beer_key"].ToString());
-                ////textBox1.Text = (reader["beer_key"].ToString());
-                ////richTextBox1.Text = (reader["article"].ToString());
-                //MessageBox.Show(reader["article"].ToString());
-                ////byte[] BinArticle = (byte[])row["article"];
-                //richTextBox1.Text = (reader["article"].ToString());
- 
-
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            ////switch ((e.Action))
-            ////{
-            ////    case TreeViewAction.ByKeyboard:
-            ////        MessageBox.Show("You like the keyboard!");
-            ////        break;
-            ////    case TreeViewAction.ByMouse:
-            //          String str=TreeView1.SelectedNode.Value.ToString();
-            //          MessageBox.Show("You like the keyboard!");
-                    
-            //          //String Sqlquery="select ChapterContent from CourseChapters where ChapterName= '" + str+"'";
-            ////        richTextBox1.text("sqlquery");
-            ////        break;
-            ////}
-
-            //treeView1.SelectedNode = treeView1.Nodes[0].Nodes[1];
-            
-
-
-            
+            //richTextBox1.Text = UTF8Encoding.ASCII.GetString(imagepic); //For text inside a Blob
 
 
 
 
         }
-     
-}
-}
+
+    }
+
+    //using (SQLiteConnection conn2 = new SQLiteConnection("Data Source = |DataDirectory|\\JTIS.db"))
+    //{
+    //    conn2.Open();
+
+
+    //    TreeNode node = treeView1.SelectedNode;
+    //    string nodename = node.ToString();
+    //    SQLiteCommand cmd2 = new SQLiteCommand("SELECT IMAGE FROM IMAGES INNER JOIN DATA ON IMAGES.image_id=DATA.image_id WHERE DATA.name ='" + (nodename.Trim().Remove(0, 10)) + "'", conn2);
+
+    //    SQLiteDataReader reader2 = cmd2.ExecuteReader();
+
+    //    while (reader2.Read())
+    //    {
+    //        byte[] imageBytes = (Byte[])reader2["image"];
+    //        MemoryStream ms = new MemoryStream(imageBytes);
+    //        //pictureBox1.Image = Image.FromStream(ms, true);
+    //        Clipboard.SetImage(Image.FromStream(ms, true));
+    //        richTextBox1.Paste();
+    //    }
+    //    }
+    //}
+
+
+
+
+
+
+    ////MessageBox.Show(reader["beer_key"].ToString());
+    ////textBox1.Text = (reader["beer_key"].ToString());
+    ////richTextBox1.Text = (reader["article"].ToString());
+    //MessageBox.Show(reader["article"].ToString());
+    ////byte[] BinArticle = (byte[])row["article"];
+    //richTextBox1.Text = (reader["article"].ToString());
+
+
+
+    //private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+    //{
+        ////switch ((e.Action))
+        ////{
+        ////    case TreeViewAction.ByKeyboard:
+        ////        MessageBox.Show("You like the keyboard!");
+        ////        break;
+        ////    case TreeViewAction.ByMouse:
+        //          String str=TreeView1.SelectedNode.Value.ToString();
+        //          MessageBox.Show("You like the keyboard!");
+
+        //          //String Sqlquery="select ChapterContent from CourseChapters where ChapterName= '" + str+"'";
+        ////        richTextBox1.text("sqlquery");
+        ////        break;
+        ////}
+
+        //treeView1.SelectedNode = treeView1.Nodes[0].Nodes[1];
+
+
+
+
+
+
+
+
+    }
+
+
+
+
 

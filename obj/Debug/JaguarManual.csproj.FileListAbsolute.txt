@@ -7,3 +7,14 @@ E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.Properties.Resources.resourc
 E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.csproj.GenerateResource.Cache
 E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.exe
 E:\JaguarManual\JaguarManual\obj\Debug\JaguarManual.pdb
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.csproj.AssemblyReference.cache
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.csproj.SuggestedBindingRedirects.cache
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.Form1.resources
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.Properties.Resources.resources
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.csproj.GenerateResource.cache
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.csproj.CoreCompileInputs.cache
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.exe
+C:\Users\AKU\Source\Repos\JaguarManual\obj\Debug\JaguarManual.pdb
+C:\Users\AKU\Source\Repos\JaguarManual\bin\Debug\JaguarManual.exe.config
+C:\Users\AKU\Source\Repos\JaguarManual\bin\Debug\JaguarManual.exe
+C:\Users\AKU\Source\Repos\JaguarManual\bin\Debug\JaguarManual.pdb
